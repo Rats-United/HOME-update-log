@@ -1,5 +1,3 @@
-import { marked } from 'marked';
-
 const fs = require('fs');
 
 let base = "https://github.com/Rats-United/HOME-update-log";
