@@ -45,4 +45,6 @@ groups.forEach((group, gi) => {
 });
 
 
-console.log(content.join("\n\n"));
+content = content.join("\n\n");
+
+fs.writeFileSync(logrefdir, content);
