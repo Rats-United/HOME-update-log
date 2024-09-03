@@ -1,0 +1,15 @@
+{
+	"name": "HomeUpdateLog",
+	
+	"tree": {
+		"$className": "DataModel",
+
+    "Workspace": {
+			"$className": "Workspace",
+			
+			"classjs": {
+        "$path": "src"
+      }
+    }
+	}
+}
