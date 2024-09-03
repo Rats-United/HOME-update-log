@@ -10,5 +10,8 @@ let dir = `${__dirname}logs`.replace("workflowscripts", "");
 let groups = fs.readdirSync(dir);
 
 groups.forEach((v, i) => {
-  console.log(v, i);
+  let groupdir = `${dir}/${v}`;
+  let group = fs.readdirSync(groupdir);
+
+  console.log(group);
 });
