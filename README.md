@@ -4,7 +4,6 @@ this is displayed on a board in HOME using some funky http stuff I made here's a
 
 to avoid the most lag on the server as possible they're split into groups as folders (I would do groups of 5 but up to you)<br>
 each group should be numbered as the number will decide what order it displays<br>
-it should also have the word "log" in the name it's not case specific though so go off<br>
 
 names can be anything usually as long as you number them correctly
 
