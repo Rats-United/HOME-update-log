@@ -31,7 +31,7 @@ groups.forEach((group, gi) => {
     var name;
 
     csplit.forEach(c => {
-      if (c.match(r"^# ")) {
+      if (c.match(/^# /)) {
         name = c.replace("# ", "").trim();
       }
     });
