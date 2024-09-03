@@ -1,0 +1,14 @@
+{
+  "properties": [
+    
+    "BackgroundColor3": [ 0, 0, 0],
+    "BackgroundTransparency": 0.5,
+    "Size": {
+      "UDim2": [
+        [ 1, 0 ], 
+        [ 0, 2 ]
+      ]
+    }
+    
+  ]
+}
