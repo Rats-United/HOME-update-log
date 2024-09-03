@@ -2,8 +2,8 @@ const fs = require('fs');
 
 let base = "https://github.com/Rats-United/HOME-update-log";
 
-let tree = `${base}/tree/main`;
-let blob = `${base}/blob/main`
+let tree = `${base}/tree/main/logs`;
+let blob = `${base}/blob/main/logs`
 
 let basedir = __dirname.replace("workflowscripts", "");
 let dir = `${basedir}logs`;
