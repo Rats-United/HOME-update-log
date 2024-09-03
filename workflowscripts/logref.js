@@ -1,3 +1,5 @@
+import { marked } from 'marked';
+
 const fs = require('fs');
 
 let base = "https://github.com/Rats-United/HOME-update-log";
@@ -5,17 +7,29 @@ let base = "https://github.com/Rats-United/HOME-update-log";
 let tree = `${base}/tree`;
 let blob = `${base}/blob`
 
-let dir = `${__dirname}logs`.replace("workflowscripts", "");
+let basedir = __dirname.replace("workflowscripts", "");
+let dir = `${basedir}logs`;
+let logrefdir = `${basedir}logref.md`;
 
 let groups = fs.readdirSync(dir);
 
-groups.forEach((group) => {
+let content = [];
+
+groups.forEach((group, gi) => {
   let groupdir = `${dir}/${group}`;
   let treelink = `${tree}/${group}`;
   let bloblink = `${blob}/${group}`;
   let logs = fs.readdirSync(groupdir);
 
-  logs.forEach((log) => {
-    console.log(log);
+  content.push(`### [${group}](${treelink}) (#${gi})`);
+  
+  logs.forEach((log, li) => {
+    bloblink = `${bloblink}/${log}`;
+    let logdir = `${groupdir}/${log}`;
+    
+    let filecontent = fs.readfilesync(logdir);
+    // content.push(`${li}. `)
+
+    console.log(filecontent);
   });
 });
