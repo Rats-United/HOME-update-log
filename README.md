@@ -9,9 +9,10 @@ it should also have the word "log" in the name it's not case specific though so 
 names can be anything usually as long as you number them correctly
 
 ex: 
-- 1_cool update logs
-- cool update logs 1
-- log1
+- 1_cool updates
+- cool update 1
+- 1
+- upd1
 
 inside of that folder there should be your actual logs as markdown (.md) files<br>
 the files inside follow the same rules as groups except they don't require the word log<br>
