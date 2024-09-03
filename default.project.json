@@ -7,7 +7,7 @@
     "Workspace": {
 			"$className": "Workspace",
 			
-			"classjs": {
+			"LogBoard": {
         "$path": "src"
       }
     }
