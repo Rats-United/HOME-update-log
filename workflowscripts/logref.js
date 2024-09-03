@@ -26,8 +26,22 @@ groups.forEach((group, gi) => {
     let logdir = `${groupdir}/${log}`;
     
     let filecontent = fs.readFileSync(logdir, 'utf8');
-    // content.push(`${li}. `)
+    let csplit = filecontent.split(/[\r\n]+/);
 
-    console.log(filecontent);
+    var name;
+
+    csplit.forEach(c => {
+      if (c.includes("# ")) {
+        name = c.replace("# ", "").trim();
+      }
+    });
+
+    if (!name) {
+      name = log.replace(".md", "");
+    };
+    
+    content.push(`${li}. ${name} [(${log})](${bloblink}) `)
+
+    console.log(content.join("\n\n"));
   });
 });
