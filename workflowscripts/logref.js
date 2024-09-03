@@ -7,6 +7,8 @@ let blob = `${base}/blob`
 
 let dir = `${__dirname}logs`.replace("workflowscripts", "");
 
-let files = fs.readdirSync(dir);
+let groups = fs.readdirSync(dir);
 
-console.log(files);
+groups.forEach((v, i) => {
+  print(v, i);
+});
