@@ -15,8 +15,8 @@ let content = [];
 
 groups.forEach((group, gi) => {
   let groupdir = `${dir}/${group}`;
-  let treelink = `${tree}/${group}`;
-  let bloblink = `${blob}/${group}`;
+  let treelink = `${tree}/${ group.split(" ").join("%20") }`;
+  let bloblink = `${blob}/${ group.split(" ").join("%20") }`;
   let logs = fs.readdirSync(groupdir);
 
   content.push(`### [${group}](${treelink}) (#${gi})`);
