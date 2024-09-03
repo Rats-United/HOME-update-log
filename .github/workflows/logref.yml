@@ -24,6 +24,9 @@ jobs:
           
       - name: Check out the repository to the runner
         uses: actions/checkout@v4  
+
+      - name: Install packages  
+        run: npm i
       
       - name: Make the script files executable
         run: chmod u+x logref.js
