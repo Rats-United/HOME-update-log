@@ -109,7 +109,7 @@ for i, dir in ipairs(rawlogs) do
 	
 	-- print(string.match(string.lower(dir.name), "log"), dir.type == "dir", (not string.match(string.lower(dir.name), ".md")));
 	
-	if (string.match(string.lower(dir.name), "log")) and (dir.type == "dir") and (not string.match(string.lower(dir.name), ".md")) then
+	if (dir.type == "dir") and (not string.match(string.lower(dir.name), ".md")) then
 		table.insert(logs, dir._links.self);
 	end
 end
