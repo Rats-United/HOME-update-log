@@ -25,7 +25,7 @@ groups.forEach((group, gi) => {
     bloblink = `${bloblink}/${log}`;
     let logdir = `${groupdir}/${log}`;
     
-    let filecontent = fs.readFileSync(logdir);
+    let filecontent = fs.readFileSync(logdir, 'utf8');
     // content.push(`${li}. `)
 
     console.log(filecontent);
