@@ -9,9 +9,13 @@ let dir = `${__dirname}logs`.replace("workflowscripts", "");
 
 let groups = fs.readdirSync(dir);
 
-groups.forEach((v, i) => {
-  let groupdir = `${dir}/${v}`;
-  let group = fs.readdirSync(groupdir);
+groups.forEach((group) => {
+  let groupdir = `${dir}/${group}`;
+  let treelink = `${tree}/${group}`;
+  let bloblink = `${blob}/${group}`;
+  let logs = fs.readdirSync(groupdir);
 
-  console.log(group);
+  logs.forEach((log) => {
+    console.log(log);
+  });
 });
