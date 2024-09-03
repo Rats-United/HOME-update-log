@@ -20,3 +20,4 @@ the files inside follow the same rules as groups except they don't require the w
 ex: 
 - cool update log 1.md
 - cool update log v1.md
+- 1_cool update
