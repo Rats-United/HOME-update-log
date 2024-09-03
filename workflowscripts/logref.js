@@ -40,7 +40,7 @@ groups.forEach((group, gi) => {
       name = log.replace(".md", "");
     };
     
-    content.push(`${li+1}. ${name} [(${log})](${bloblink}) `)
+    content.push(`${li+1}. ${name} [(${ log.split(" ").join("%20") })](${ bloblink }) `)
   });
 });
 
