@@ -29,5 +29,4 @@ jobs:
         run: chmod u+x logref.js
       
       - name: Run the scripts
-        run: |
-          ./logref.js
+        run: node ./logref.js
