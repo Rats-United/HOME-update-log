@@ -1,3 +1,8 @@
+const fs = require('fs');
+const fetch = require('node-fetch');
+var exec = require('child_process').exec;
+
+
 const getArgs = () =>
   process.argv.reduce((args, arg) => {
     // long arg
@@ -18,11 +23,7 @@ const getArgs = () =>
   }, {});
 
 const args = getArgs();
-
-console.log(args);
-
-const fs = require('fs');
-const fetch = require('node-fetch');
+const token = args.token;
 
 let base = "https://github.com/Rats-United/HOME-update-log";
 
@@ -72,3 +73,8 @@ groups.forEach((group, gi) => {
 content = content.join("\n\n");
 
 fs.writeFileSync(logrefdir, content);
+
+let msg = "Auto-updated logref.md";
+
+exec(`git add .`);
+exec(`git commit -m "${msg}" ${logrefdir}`);
