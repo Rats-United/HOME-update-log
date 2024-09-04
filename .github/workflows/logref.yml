@@ -32,4 +32,4 @@ jobs:
         run: chmod u+x logref.js
       
       - name: Run the scripts
-        run: node ./logref.js
+        run: "node ./logref.js --token=$(GITHUB_TOKEN)"
