@@ -76,9 +76,9 @@ groups.forEach((group, gi) => {
 
 content = content.join("\n\n");
 
-const res = fs.writeFileSync(logrefdir, content);
-
-console.log(res);
+fs.writeFile(logrefdir, content).then( () => {
+  console.log(fs.readFileSync(logrefdir));
+});
 
 const pythonProcess = spawn('python',[ `${__dirname}/logref.py` ]);
 
