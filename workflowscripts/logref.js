@@ -1,6 +1,8 @@
 const fs = require('fs');
 const fetch = require('node-fetch');
-var exec = require('child_process').exec;
+const childproc = require("child_process");
+const spawn = childproc.spawn;
+const exec = childproc.exec;
 
 
 const getArgs = () =>
@@ -72,12 +74,8 @@ groups.forEach((group, gi) => {
 
 content = content.join("\n\n");
 
-fs.writeFileSync(logrefdir, content);
+const res = fs.writeFileSync(logrefdir, content);
 
-let msg = "Auto-updated logref.md";
+console.log(res);
 
-exec(`echo test`);
-exec(`git add .`);
-exec(`git commit -m "${msg}" ${logrefdir}`);
-exec(`git status`);
-exec(`git push origin main`);
+const pythonProcess = spawn('python',[ `${__dirname}/logref.py` ]);
