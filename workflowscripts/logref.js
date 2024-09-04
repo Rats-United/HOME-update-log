@@ -88,5 +88,5 @@ pythonProcess.stdout.on('data', (data) => {
 });
 
 pythonProcess.stderr.on('data', (data) => {
-  console.log(data.toString());
+  new Error(data.toString());
 })
