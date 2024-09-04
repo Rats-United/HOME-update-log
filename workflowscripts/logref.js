@@ -1,33 +1,10 @@
 const fs = require('fs');
 const childproc = require("child_process");
 const spawn = childproc.spawn;
-
+const os = require('os');
 
 
 console.log('test');
-
-
-const getArgs = () =>
-  process.argv.reduce((args, arg) => {
-    // long arg
-    if (arg.slice(0, 2) === "--") {
-      const longArg = arg.split("=");
-      const longArgFlag = longArg[0].slice(2);
-      const longArgValue = longArg.length > 1 ? longArg[1] : true;
-      args[longArgFlag] = longArgValue;
-    }
-    // flags
-    else if (arg[0] === "-") {
-      const flags = arg.slice(1).split("");
-      flags.forEach((flag) => {
-        args[flag] = true;
-      });
-    }
-    return args;
-  }, {});
-
-const args = getArgs();
-const token = args.token;
 
 let base = "https://github.com/Rats-United/HOME-update-log";
 
@@ -40,7 +17,12 @@ let logrefdir = `${basedir}logref.md`;
 
 let groups = fs.readdirSync(dir);
 
-let content = [];
+let content = [
+
+  "# LogRef",
+  "this is where log references are for easier navigation",
+
+];
 
 groups.forEach((group, gi) => {
   let groupdir = `${dir}/${group}`;
@@ -76,16 +58,20 @@ groups.forEach((group, gi) => {
 
 content = content.join("\n\n");
 
-fs.writeFile(logrefdir, content).then( () => {
-  console.log(fs.readFileSync(logrefdir));
-});
+fs.writeFileSync(logrefdir, content)
 
-const pythonProcess = spawn('python',[ `${__dirname}/logref.py` ]);
+
+console.log(fs.readFileSync(logrefdir, 'utf8'));
+
+const platform = os.platform();
+const pytext = (platform.includes("win")) ? "py" : "python";
+
+const pythonProcess = spawn(pytext, [ `${__dirname}/logref.py` ]);
 
 pythonProcess.stdout.on('data', (data) => {
- console.log(data.toString());
+  console.log(data.toString());
 });
 
 pythonProcess.stderr.on('data', (data) => {
-  new Error(data.toString());
-})
+  console.log(data.toString());
+});

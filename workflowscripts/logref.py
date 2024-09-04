@@ -6,10 +6,16 @@ logrefdir = basedir + "logref.md";
 
 print(logrefdir);
 
-os.system('echo os is running');
-os.system('git add all');
-os.system('git commit -m "Updating logref.md" {0}'.format(logrefdir));
-os.system('git status');
-os.system('git push');
+commands = [
+    'echo os is running',
+    'git add {0}'.format(logrefdir),
+    'git commit -m "Refreshed logref.md" {0}'.format(logrefdir),
+    'git status',
+    'git push'
+]
+
+for command in commands:
+    print(command);
+    os.system(command);
 
 sys.stdout.flush()
