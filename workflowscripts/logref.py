@@ -7,7 +7,7 @@ logrefdir = basedir + "logref.md";
 print(logrefdir);
 
 os.system('echo os is running');
-os.system('git add .');
+os.system('git add all');
 os.system('git commit -m "Updating logref.md" {0}'.format(logrefdir));
 os.system('git push');
 
