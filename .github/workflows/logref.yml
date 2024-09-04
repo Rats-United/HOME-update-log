@@ -9,7 +9,7 @@ on:
       - .github/workflows/logref.yml
 
 jobs:
-  example-job:
+  refresh-logref:
     runs-on: ubuntu-latest
     
     defaults:
@@ -17,11 +17,6 @@ jobs:
         working-directory: ./workflowscripts
         
     steps:
-      - uses: actions/setup-node@v3
-        with:
-          node-version: '16.x'
-          registry-url: 'https://registry.npmjs.org'
-          
       - name: Check out the repository to the runner
         uses: actions/checkout@v4  
 
