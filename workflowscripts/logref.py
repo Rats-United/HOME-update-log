@@ -1,11 +1,12 @@
 import sys
 import os
 
-dir_path = os.path.dirname(os.path.realpath(__file__)).replace("workflowscripts", "");
+basedir = os.path.dirname(os.path.realpath(__file__)).replace("workflowscripts", "");
+logrefdir = basedir + "logref.md";
 
-print(dir_path);
+print(logrefdir);
 
-#os.system('git add .', shell=True, stdout=subprocess.PIPE);
+os.system('git add .', shell=True, stdout=subprocess.PIPE);
 # os.system('git commit -m "Updating logref.md" {0}'.format(), shell=True, stdout=subprocess.PIPE);
 
 sys.stdout.flush()
