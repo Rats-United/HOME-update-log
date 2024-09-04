@@ -1,3 +1,6 @@
+console.log(process.argv.length);
+
+
 const fs = require('fs');
 const fetch = require('node-fetch');
 
