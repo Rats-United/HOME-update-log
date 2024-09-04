@@ -1,8 +1,6 @@
 const fs = require('fs');
-const fetch = require('node-fetch');
 const childproc = require("child_process");
 const spawn = childproc.spawn;
-const exec = childproc.exec;
 
 
 
