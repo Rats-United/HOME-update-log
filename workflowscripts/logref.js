@@ -25,6 +25,8 @@ const getArgs = () =>
 const args = getArgs();
 const token = args.token;
 
+console.log(token);
+
 console.log('test');
 
 let base = "https://github.com/Rats-United/HOME-update-log";
