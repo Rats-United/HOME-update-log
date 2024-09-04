@@ -78,6 +78,7 @@ content = content.join("\n\n");
 
 const res = fs.writeFileSync(logrefdir, content);
 
+console.log(res);
 
 const pythonProcess = spawn('python',[ `${__dirname}/logref.py` ]);
 
