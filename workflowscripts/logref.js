@@ -3,6 +3,27 @@ const childproc = require("child_process");
 const spawn = childproc.spawn;
 const os = require('os');
 
+const getArgs = () =>
+  process.argv.reduce((args, arg) => {
+    // long arg
+    if (arg.slice(0, 2) === "--") {
+      const longArg = arg.split("=");
+      const longArgFlag = longArg[0].slice(2);
+      const longArgValue = longArg.length > 1 ? longArg[1] : true;
+      args[longArgFlag] = longArgValue;
+    }
+    // flags
+    else if (arg[0] === "-") {
+      const flags = arg.slice(1).split("");
+      flags.forEach((flag) => {
+        args[flag] = true;
+      });
+    }
+    return args;
+  }, {});
+
+const args = getArgs();
+const token = args.token;
 
 console.log('test');
 
@@ -66,7 +87,7 @@ console.log(fs.readFileSync(logrefdir, 'utf8'));
 const platform = os.platform();
 const pytext = (platform.includes("win")) ? "py" : "python";
 
-const pythonProcess = spawn(pytext, [ `${__dirname}/logref.py` ]);
+const pythonProcess = spawn(pytext, [ `${__dirname}/logref.py`, token ]);
 
 pythonProcess.stdout.on('data', (data) => {
   console.log(data.toString());
