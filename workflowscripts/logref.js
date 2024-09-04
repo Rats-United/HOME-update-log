@@ -43,7 +43,8 @@ let groups = fs.readdirSync(dir);
 let content = [
 
   "# LogRef",
-  "this is where log references are for easier navigation",
+  "this is where log references are for easier navigation<br>",
+  '<img height=22 src="https://github.com/Rats-United/HOME-update-log/actions/workflows/logref.yml/badge.svg" alt="publish">'
 
 ];
 
