@@ -27,4 +27,4 @@ jobs:
         run: chmod u+x logref.js
       
       - name: Run the scripts
-        run: node ./logref.js ${{secrets.GITHUB_TOKEN}}
+        run: node ./logref.js --token=${{ secrets.GITHUB_TOKEN }}
