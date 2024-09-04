@@ -1,4 +1,5 @@
 const fs = require('fs');
+const fetch = require('node-fetch');
 
 let base = "https://github.com/Rats-United/HOME-update-log";
 
