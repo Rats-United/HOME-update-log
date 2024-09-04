@@ -5,6 +5,10 @@ const spawn = childproc.spawn;
 const exec = childproc.exec;
 
 
+
+console.log('test');
+
+
 const getArgs = () =>
   process.argv.reduce((args, arg) => {
     // long arg
