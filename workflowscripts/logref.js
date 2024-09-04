@@ -78,3 +78,4 @@ let msg = "Auto-updated logref.md";
 
 exec(`git add .`);
 exec(`git commit -m "${msg}" ${logrefdir}`);
+exec(`git push origin main`);
