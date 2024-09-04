@@ -76,6 +76,7 @@ fs.writeFileSync(logrefdir, content);
 
 let msg = "Auto-updated logref.md";
 
+exec(`echo test`);
 exec(`git add .`);
 exec(`git commit -m "${msg}" ${logrefdir}`);
 exec(`git status`);
