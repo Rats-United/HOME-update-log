@@ -3,6 +3,6 @@
     "version": "1.0.0",
     "author": "shysolocup",
     "dependencies": {
-        "marked": "latest"
+        "node-fetch@2": "latest"
     }
 }
