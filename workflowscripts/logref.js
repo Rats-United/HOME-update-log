@@ -84,9 +84,9 @@ const res = fs.writeFileSync(logrefdir, content);
 const pythonProcess = spawn('python',[ `${__dirname}/logref.py` ]);
 
 pythonProcess.stdout.on('data', (data) => {
- console.log(data);
+ console.log(data.toString());
 });
 
 pythonProcess.stderr.on('data', (data) => {
-  console.log(data);
+  console.log(data.toString());
 })
