@@ -1,4 +1,4 @@
-# Log Ref
+# LogRef
 
 this is where log references are for easier navigation
 
