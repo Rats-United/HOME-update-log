@@ -25,6 +25,12 @@ jobs:
       
       - name: Make the script files executable
         run: chmod u+x logref.js
+
+
+      - name: Config Github
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "88659700+github-actions[bot]@users.noreply.github.com"
       
       - name: Run the scripts
         run: node ./logref.js --token=${{ secrets.GITHUB_TOKEN }}
