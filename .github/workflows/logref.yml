@@ -33,4 +33,4 @@ jobs:
           # git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
       
       - name: Run the scripts
-        run: node ./logref.js --token=${{ secrets.GITHUB_TOKEN }} --username=${{ github.actor }}
+        run: node ./logref.js --username=${{ github.actor }} --useremail=${{ github.event.pusher.email }}
