@@ -103,7 +103,7 @@ console.log(fs.readFileSync(logrefdir, 'utf8'));
 const platform = os.platform();
 const pytext = (platform.includes("win")) ? "py" : "python";
 
-const pythonProcess = spawn(pytext, [ `${__dirname}/logref.py`, token ]);
+const pythonProcess = spawn(pytext, [ `${__dirname}/logref.py`, token, username, base ]);
 
 pythonProcess.stdout.on('data', (data) => {
   console.log(data.toString());
