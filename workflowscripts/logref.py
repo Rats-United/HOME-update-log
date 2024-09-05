@@ -7,6 +7,8 @@ logrefdir = basedir + "logref.md";
 print(logrefdir);
 
 token = sys.argv[1];
+username = sys.argv[2];
+reponame = sys.argv[3];
 
 commands = [
     'echo os is running',  
@@ -16,8 +18,8 @@ commands = [
     'git status'
 ];
 
-# if token and token != "undefined":
-    # commands.insert(1, 'git remote add origin https://{0}@github.com/Rats-United/HOME-update-log.git'.format(token));
+if token and token != "undefined":
+    commands.insert(1, 'git remote add origin https://{1}:{2}@${3}.git'.format(username, token, reponame));
 
 for command in commands:
     print(command);
