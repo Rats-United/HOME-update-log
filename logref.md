@@ -12,4 +12,4 @@ this is where log references are for easier navigation<br>
 
 1. log1 [(log1.md)](https://github.com/Rats-United/HOME-update-log/blob/main/logs/group2/log1.md) 
 
-2. log2 [(log2.md)](https://github.com/Rats-United/HOME-update-log/blob/main/logs/group2/log1.md/log2.md) 
+2. log2 [(log2.md)](https://github.com/Rats-United/HOME-update-log/blob/main/logs/group2/log2.md) 
