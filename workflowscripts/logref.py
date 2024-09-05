@@ -26,8 +26,8 @@ commands = [
   #  commands.insert(1, 'git remote set_url origin https://{username}:{token}@${reponame}.git'.format(username=username, token=token, reponame=reponame));
 
 if username != "undefined" and email != "undefined":
-    commands.insert(1, 'git config --global user.name {0}'.format(username);
-    commands.insert(1, 'git config --global user.email {0}'.format(useremail);
+    commands.insert(1, 'git config --global user.name {0}'.format(username));
+    commands.insert(1, 'git config --global user.email {0}'.format(useremail));
     
 
 for command in commands:
