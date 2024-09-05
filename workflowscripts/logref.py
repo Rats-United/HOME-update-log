@@ -10,6 +10,10 @@ token = sys.argv[1];
 username = sys.argv[2];
 reponame = sys.argv[3];
 
+
+print(token, username, reponame);
+
+
 commands = [
     'echo os is running',  
     'git add {0}'.format(logrefdir),
