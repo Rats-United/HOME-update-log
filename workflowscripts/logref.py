@@ -6,13 +6,12 @@ logrefdir = basedir + "logref.md";
 
 print(logrefdir);
 
-token = sys.argv[1];
-username = sys.argv[2];
-useremail = sys.argv[3];
-reponame = sys.argv[4];
+username = sys.argv[1];
+useremail = sys.argv[2];
+repolink = sys.argv[3];
 
 
-print(token, username, useremail, reponame);
+print(username, useremail, repolink);
 
 
 commands = [
