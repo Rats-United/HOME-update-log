@@ -27,6 +27,9 @@ const args = getArgs();
 const token = args.token;
 const username = args.username;
 
+console.log(token);
+console.log(username);
+
 fetch(`https://api.github.com/user/${username}`, {
   "headers": {
     "User-Agent": "request",
@@ -36,8 +39,6 @@ fetch(`https://api.github.com/user/${username}`, {
 }).then(res => {
   console.log(res);
 });
-
-console.log(token);
 
 console.log('test');
 
