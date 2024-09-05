@@ -113,8 +113,8 @@ const commands = [
 
 
 if (username && useremail) {
-    arr.splice(1, 0, `git config --global user.name ${username}`);
-    arr.splice(1, 0, `git config --global user.email ${useremail}`);
+    commands.splice(1, 0, `git config --global user.name ${username}`);
+    commands.splice(1, 0, `git config --global user.email ${useremail}`);
 }
 
 
