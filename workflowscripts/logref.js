@@ -28,7 +28,7 @@ const token = args.token;
 
 fetch("https://api.github.com/user", {
   "headers": {
-    "Authorizaiton": token,
+    "Authorizaiton": `Bearer ${token}`,
     "X-GitHub-Api-Version": "2022-11-28"
   }
 }).then(res => {
