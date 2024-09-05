@@ -33,4 +33,4 @@ jobs:
           git config --global user.email ${{ github.event.pusher.email }}
       
       - name: Run the scripts
-        run: node ./logref.js --username=${{ github.actor }} --useremail=${{ github.event.pusher.email }}
+        run: node ./logref.js --username=${{ github.actor }} --useremail=${{ github.event.pusher.email }} --commitmsg=${{ github.event.head_commit.message }}
