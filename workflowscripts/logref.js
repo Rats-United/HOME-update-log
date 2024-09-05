@@ -123,7 +123,7 @@ console.log(commands);
 
 commands.forEach( c => {
   console.log(c);
-  exec(c).catch( (e) => console.log(e); throw e );
+  exec(c).catch( (e) => console.log(e); );
 })
 
 
