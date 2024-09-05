@@ -1,6 +1,7 @@
 const fs = require('fs');
 // const fetch = require('node-fetch');
 const childproc = require("child_process");
+const execsync = childproc.execsync;
 const spawn = childproc.spawn;
 const os = require('os');
 
@@ -102,6 +103,28 @@ fs.writeFileSync(logrefdir, content)
 
 console.log(fs.readFileSync(logrefdir, 'utf8'));
 
+const commands = [
+  'echo os is running',  
+  `git add ${logrefdir}`,
+  `git commit -m "Refreshed logref.md" ${logrefdir}`,
+  'git push',
+  'git status'
+];
+
+
+if (username && useremail) {
+    arr.splice(1, 0, `git config --global user.name ${username}`);
+    arr.splice(1, 0, `git config --global user.email ${useremail}`);
+}
+
+
+commands.forEach( c => {
+  console.log(c);
+  execsync(c);
+})
+
+
+/*
 const platform = os.platform();
 const pytext = (platform.includes("win")) ? "py" : "python";
 
@@ -112,5 +135,12 @@ pythonProcess.stdout.on('data', (data) => {
 });
 
 pythonProcess.stderr.on('data', (data) => {
-  console.log(`ERR!: ${data.toString()}`);
+  let err = data.toString();
+  
+  console.log(`ERR!: ${err}`);
+  
+  if (err != "Everything up-to-date") {
+    throw err;
+  }
 });
+*/
