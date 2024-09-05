@@ -8,7 +8,8 @@ print(logrefdir);
 
 username = sys.argv[1];
 useremail = sys.argv[2];
-repolink = sys.argv[3];
+commitmsg = sys.argv[3];
+repolink = sys.argv[4];
 
 
 print(username, useremail, repolink);
@@ -17,7 +18,7 @@ print(username, useremail, repolink);
 commands = [
     'echo os is running',  
     'git add {0}'.format(logrefdir),
-    'git commit -m "Refreshed logref.md" {0}'.format(logrefdir),
+    'git commit -m {0} {1}'.format(commitmsg, logrefdir),
     'git push',
     'git status'
 ];
