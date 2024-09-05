@@ -70,7 +70,7 @@ groups.forEach((group, gi) => {
   content.push(`### [${group}](${treelink}) (#${gi})`);
   
   logs.forEach((log, li) => {
-    bloblink = `${bloblink}/${ log.split(" ").join("%20") }`;
+    let logbloblink = `${bloblink}/${ log.split(" ").join("%20") }`;
     let logdir = `${groupdir}/${ log }`;
     
     let filecontent = fs.readFileSync(logdir, 'utf8');
@@ -88,7 +88,7 @@ groups.forEach((group, gi) => {
       name = log.replace(".md", "");
     };
     
-    content.push(`${li+1}. ${name} [(${ log })](${ bloblink }) `)
+    content.push(`${li+1}. ${name} [(${ log })](${ logbloblink }) `)
   });
 });
 
