@@ -23,7 +23,7 @@ commands = [
 ];
 
 if token and token != "undefined":
-    commands.insert(1, 'git remote add origin https://{1}:{2}@${3}.git'.format(username, token, reponame));
+    commands.insert(1, 'git remote add origin https://{username}:{token}@${reponame}.git'.format(username=username, token=token, reponame=reponame));
 
 for command in commands:
     print(command);
