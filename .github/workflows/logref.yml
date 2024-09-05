@@ -29,8 +29,8 @@ jobs:
 
       - name: Config Github
         run: |
-          git config user.name ${{ github.actor }}
-          git config user.email ${{ github.event.pusher.email }}
+          git config --global user.name ${{ github.actor }}
+          git config --global user.email ${{ github.event.pusher.email }}
       
       - name: Run the scripts
         run: node ./logref.js --username=${{ github.actor }} --useremail=${{ github.event.pusher.email }}
