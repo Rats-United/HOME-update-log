@@ -9,9 +9,7 @@ print(logrefdir);
 token = sys.argv[1];
 
 commands = [
-    'echo os is running',
-    'git config user.name \"github-actions[bot]\"',
-    'git config user.email \"41898282+github-actions[bot]@users.noreply.github.com\"',  
+    'echo os is running',  
     'git add {0}'.format(logrefdir),
     'git commit -m "Refreshed logref.md" {0}'.format(logrefdir),
     'git status',
