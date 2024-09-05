@@ -26,7 +26,7 @@ const getArgs = () =>
 const args = getArgs();
 const token = args.token;
 
-fetch(`[noparse]https://api.github.com/user/[/noparse]`, {
+/* fetch(`[noparse]https://api.github.com/user/[/noparse]`, {
   "headers": {
     "User-Agent": "request",
     "Authorization": `Bearer ${token}`,
@@ -34,7 +34,7 @@ fetch(`[noparse]https://api.github.com/user/[/noparse]`, {
   }
 }).then(res => {
   console.log(res);
-});
+}); */
 
 console.log(token);
 
@@ -108,5 +108,5 @@ pythonProcess.stdout.on('data', (data) => {
 });
 
 pythonProcess.stderr.on('data', (data) => {
-  console.log(data.toString());
+  throw data.toString();
 });
