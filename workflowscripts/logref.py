@@ -12,7 +12,7 @@ commitmsg = sys.argv[3];
 repolink = sys.argv[4];
 
 
-print(username, useremail, repolink);
+print(username, useremail, commitmsg, repolink);
 
 
 commands = [
