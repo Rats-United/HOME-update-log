@@ -26,9 +26,11 @@ const getArgs = () =>
 const args = getArgs();
 const username = args.username;
 const useremail = args.useremail;
+const commitmsg = args.commitmsg;
 
 console.log(username);
 console.log(useremail);
+console.log(commitmsg);
 
 /*fetch(`https://api.github.com/user/${username}`, {
   "headers": {
@@ -103,7 +105,7 @@ console.log(fs.readFileSync(logrefdir, 'utf8'));
 const platform = os.platform();
 const pytext = (platform.includes("win")) ? "py" : "python";
 
-const pythonProcess = spawn(pytext, [ `${__dirname}/logref.py`, username, useremail, base ]);
+const pythonProcess = spawn(pytext, [ `${__dirname}/logref.py`, username, useremail, commitmsg, base ]);
 
 pythonProcess.stdout.on('data', (data) => {
   console.log(data.toString());
