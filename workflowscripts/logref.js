@@ -1,7 +1,7 @@
 const fs = require('fs');
 // const fetch = require('node-fetch');
 const childproc = require("child_process");
-const execSync = childproc.execSync;
+const exec = childproc.exec;
 const spawn = childproc.spawn;
 const os = require('os');
 
@@ -118,9 +118,12 @@ if (username && useremail) {
 }
 
 
+console.log(commands);
+    
+
 commands.forEach( c => {
   console.log(c);
-  execSync(c);
+  exec(c).catch( (e) => console.log(e); throw e );
 })
 
 
