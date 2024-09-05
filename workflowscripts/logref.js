@@ -26,7 +26,7 @@ const getArgs = () =>
 const args = getArgs();
 const token = args.token;
 
-fetch("https://api.github.com/user", {
+fetch(`[noparse]https://api.github.com/user/[/noparse]`, {
   "headers": {
     "User-Agent": "request",
     "Authorization": `Bearer ${token}`,
