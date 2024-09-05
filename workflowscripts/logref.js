@@ -1,4 +1,5 @@
 const fs = require('fs');
+const fetch = require('fetch');
 const childproc = require("child_process");
 const spawn = childproc.spawn;
 const os = require('os');
@@ -24,6 +25,15 @@ const getArgs = () =>
 
 const args = getArgs();
 const token = args.token;
+
+fetch("https://api.github.com/user", {
+  "headers": {
+    "Authorizaiton": token,
+    "X-GitHub-Api-Version": "2022-11-28"
+  }
+}).then(res => {
+  console.log(res);
+});
 
 console.log(token);
 
