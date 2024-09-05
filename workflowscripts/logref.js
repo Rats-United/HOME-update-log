@@ -27,7 +27,6 @@ const args = getArgs();
 const username = args.username;
 const useremail = args.useremail;
 
-console.log(token);
 console.log(username);
 console.log(useremail);
 
