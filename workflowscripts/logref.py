@@ -34,4 +34,5 @@ for command in commands:
     print(command);
     os.system(command);
 
+
 sys.stdout.flush()
