@@ -25,8 +25,9 @@ const getArgs = () =>
 
 const args = getArgs();
 const token = args.token;
+const username = args.username;
 
-/* fetch(`[noparse]https://api.github.com/user/[/noparse]`, {
+fetch(`https://api.github.com/user/${username}`, {
   "headers": {
     "User-Agent": "request",
     "Authorization": `Bearer ${token}`,
@@ -34,7 +35,7 @@ const token = args.token;
   }
 }).then(res => {
   console.log(res);
-}); */
+});
 
 console.log(token);
 
