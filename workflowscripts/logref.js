@@ -30,7 +30,7 @@ const username = args.username;
 console.log(token);
 console.log(username);
 
-fetch(`https://api.github.com/user/${username}`, {
+/*fetch(`https://api.github.com/user/${username}`, {
   "headers": {
     "User-Agent": "request",
     "Authorization": `Bearer ${token}`,
@@ -38,7 +38,7 @@ fetch(`https://api.github.com/user/${username}`, {
   }
 }).then(res => {
   console.log(res);
-});
+});*/
 
 console.log('test');
 
