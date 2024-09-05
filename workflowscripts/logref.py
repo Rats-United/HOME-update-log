@@ -16,7 +16,7 @@ commands = [
     'git push'
 ];
 
-if token and token != "undefined":
+# if token and token != "undefined":
     # commands.insert(1, 'git remote add origin https://{0}@github.com/Rats-United/HOME-update-log.git'.format(token));
 
 for command in commands:
