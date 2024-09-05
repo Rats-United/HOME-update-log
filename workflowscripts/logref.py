@@ -12,8 +12,8 @@ commands = [
     'echo os is running',  
     'git add {0}'.format(logrefdir),
     'git commit -m "Refreshed logref.md" {0}'.format(logrefdir),
-    'git status',
-    'git push'
+    'git push',
+    'git status'
 ];
 
 # if token and token != "undefined":
