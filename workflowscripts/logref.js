@@ -102,7 +102,7 @@ fs.writeFileSync(logrefdir, content)
 
 
 console.log(fs.readFileSync(logrefdir, 'utf8'));
-
+/*
 const commands = [
   'echo os is running',  
   `git add ${logrefdir}`,
@@ -124,10 +124,9 @@ console.log(commands);
 commands.forEach( async c => {
   console.log(c);
   await exec(c);
-})
+})*/
 
 
-/*
 const platform = os.platform();
 const pytext = (platform.includes("win")) ? "py" : "python";
 
@@ -146,4 +145,3 @@ pythonProcess.stderr.on('data', (data) => {
     throw err;
   }
 });
-*/
