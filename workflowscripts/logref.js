@@ -121,9 +121,9 @@ if (username && useremail) {
 console.log(commands);
     
 
-commands.forEach( c => {
+commands.forEach( async c => {
   console.log(c);
-  exec(c).catch( (e) => console.log(e) );
+  await exec(c);
 })
 
 
