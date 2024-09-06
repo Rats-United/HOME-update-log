@@ -141,7 +141,7 @@ pythonProcess.stderr.on('data', (data) => {
   
   console.log(`ERR!: ${err}`);
   
-  if (!err.toLowercase().includes("date")) {
+  if (!err.toLowerCase().includes("date")) {
     throw err;
   }
 });
